@@ -1,0 +1,67 @@
+Model: DeepLabV3P
+Transforms:
+- Resize:
+    interp: LINEAR
+    keep_ratio: false
+    target_size:
+    - 1024
+    - 1024
+- Normalize:
+    is_scale: true
+    max_val:
+    - 255.0
+    - 255.0
+    - 255.0
+    mean:
+    - 0.5
+    - 0.5
+    - 0.5
+    min_val:
+    - 0
+    - 0
+    - 0
+    std:
+    - 0.5
+    - 0.5
+    - 0.5
+_Attributes:
+  best_accuracy: !!python/object/apply:numpy.core.multiarray.scalar
+  - !!python/object/apply:numpy.dtype
+    args:
+    - f8
+    - false
+    - true
+    state: !!python/tuple
+    - 3
+    - <
+    - null
+    - null
+    - null
+    - -1
+    - -1
+    - 0
+  - !!binary |
+    KPvwWjxZ3T8=
+  best_model_epoch: 63
+  eval_metrics:
+    miou: 0.45857151871671187
+  fixed_input_shape:
+  - 1
+  - 3
+  - 1024
+  - 1024
+  in_channels: null
+  labels:
+  - cls0
+  - cls1
+  - cls2
+  - cls3
+  - bg
+  model_type: segmenter
+  num_classes: 5
+_init_params:
+  num_classes: 5
+  use_mixed_loss: false
+completed_epochs: 0
+status: Infer
+version: 0.0.1

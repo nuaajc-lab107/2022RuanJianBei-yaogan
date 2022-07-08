@@ -1,0 +1,61 @@
+Model: PPYOLO
+Transforms:
+- Resize:
+    interp: CUBIC
+    keep_ratio: false
+    target_size:
+    - 1024
+    - 1024
+- Normalize:
+    max_val:
+    - 255.0
+    - 255.0
+    - 255.0
+    mean:
+    - 0.485
+    - 0.456
+    - 0.406
+    min_val:
+    - 0
+    - 0
+    - 0
+    std:
+    - 0.229
+    - 0.224
+    - 0.225
+_Attributes:
+  best_accuracy: 100.0
+  best_model_epoch: 30
+  eval_metrics:
+    bbox_map: 100.0
+  fixed_input_shape:
+  - 1
+  - 3
+  - 1024
+  - 1024
+  in_channels: null
+  labels:
+  - playground
+  model_type: detector
+  num_classes: 1
+_init_params:
+  anchor_masks: null
+  anchors: null
+  backbone: ResNet50_vd_dcn
+  ignore_threshold: 0.7
+  label_smooth: false
+  nms_iou_threshold: 0.45
+  nms_keep_topk: 100
+  nms_score_threshold: 0.01
+  nms_topk: -1
+  num_classes: 1
+  scale_x_y: 1.05
+  use_coord_conv: true
+  use_drop_block: true
+  use_iou_aware: true
+  use_iou_loss: true
+  use_matrix_nms: true
+  use_spp: true
+completed_epochs: 0
+status: Infer
+version: develop
