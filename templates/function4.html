@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/function4.css">
+    <link rel="stylesheet" href="../static/css/reset.css">
+
+</head>
+<body>
+    <div class="fixed">
+       <div class="icons_ai">
+        <a href=""><img src="../static/img/AI.png" width="40px" height="40px" alt=""></a></div>
+        <div class="guanwang">智脑
+            <p1>
+                丨
+            </p1>
+            <div class="En">IntelligentBrain</div>
+        </div>
+        <div class="aistudio"><a href="https://aistudio.baidu.com/aistudio/index" target="_blank">访问AIStudio官网</a></div>
+        <div class="feijiang"><a href="https://www.paddlepaddle.org.cn/" target="_blank">访问飞桨官网</a></div>
+        <div class="icons_admin">
+         <a href="./login&register.html"><img src="../static/img/admin.png" width="38px" height="38px" alt=""></a>
+        </div> 
+    </div>  
+
+ <div class="show">
+    <div class="button-function">
+    <button id="function1"><a href="./function1.html">目标检测</a></button>
+    <button id="function2"><a href="./function2.html">目标提取</a</button>
+    <button id="function3"><a href="./function3.html">变化检测</a></button>
+    <button id="function4"><a href="./function4.html">地物分类</a></button>
+    </div>
+    <div class="buton-shangchuan">
+        <form id="image" action="" enctype="multipart/form-data" method="post">
+            <input type="file" name="avatar" id="inputImage" accept="image/*" value="选择图片" onchange="change()" multiple >
+            <!-- <input type="submit" value="点击提取"> -->
+            <div class="showimage">
+            <div id="previewContainer"></div>
+            <div class="preview-item"></div>
+            </div>  
+        </form>    
+    </div>
+    <div class="conclusion" id="conclusion">
+
+    </div>
+ </div>
+</body>
+<script type="text/javascript">
+    function change() {
+        var inputImage = document.getElementById("inputImage");
+        var files = inputImage.files;
+        
+        var previewContainer = document.getElementById("previewContainer");
+        while(previewContainer.hasChildNodes()){ previewContainer.removeChild(previewContainer.firstChild); }
+        for (var i = 0; i < files.length; i++) {
+            var file = files[i];
+            var imageType = /^image\//;
+            
+            if (!imageType.test(file.type)) {
+              continue;
+            }
+    
+            var img = document.createElement("img");
+            img.classList.add("preview-item");
+            img.file = file;
+            previewContainer.appendChild(img); // previewContainer是用来预览图片的div
+    
+            var reader = new FileReader();
+            reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
+            reader.readAsDataURL(file);
+        }
+    }
+    </script>
+</html>

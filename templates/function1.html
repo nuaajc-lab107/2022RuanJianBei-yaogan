@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/function1.css">
+    <link rel="stylesheet" href="../static/css/reset.css">
+
+</head>
+<body>
+    <div class="fixed">
+       <div class="icons_ai">
+        <a href=""><img src="../static/img/AI.png" width="40px" height="40px" alt=""></a></div>
+        <div class="guanwang">智脑
+            <p1>
+                丨
+            </p1>
+            <div class="En">IntelligentBrain</div>
+        </div>
+        <div class="aistudio"><a href="https://aistudio.baidu.com/aistudio/index" target="_blank">访问AIStudio官网</a></div>
+        <div class="feijiang"><a href="https://www.paddlepaddle.org.cn/" target="_blank">访问飞桨官网</a></div>
+        <div class="icons_admin">
+         <a href="./login&register.html"><img src="../static/img/admin.png" width="38px" height="38px" alt=""></a>
+        </div> 
+    </div>  
+
+ <div class="show">
+    <div class="button-function">
+         <div class="function1" id="function1" onclick="mubiaojiance()">目标检测</div>
+        <script>
+            function mubiaojiance(){
+                fetch("/mubiaojiance", {
+  "body": null,
+  "method": "GET",
+  "credentials": "include"
+}).then((e)=>{return e.json()}).then(
+                    (e)=>{
+                        console.log(e)
+                        document.querySelector("#conclusion").innerHTML=`<img src="${e.img}" alt="" width="452" height="402">`
+                    }
+                );
+            }
+        </script>
+         <div class="function2" id="function2" onclick="mubiaotiqu()">目标提取</div>
+        <script>
+            function mubiaotiqu(){
+                fetch("/mubiaotiqu", {
+  "body": null,
+  "method": "GET",
+  "credentials": "include"
+}).then((e)=>{return e.json()}).then(
+                    (e)=>{
+                        console.log(e)
+                        document.querySelector("#conclusion").innerHTML=`<img src="${e.img}" alt="" width="452" height="402">`
+                    }
+                );
+            }
+        </script>
+         <div class="function3" id="function3" onclick="bianhuajiance()">变化检测</div>
+        <script>
+            function bianhuajiance(){
+                fetch("/bianhuajiance", {
+  "body": null,
+  "method": "GET",
+  "credentials": "include"
+}).then((e)=>{return e.json()}).then(
+                    (e)=>{
+                        console.log(e)
+                        document.querySelector("#conclusion").innerHTML=`<img src="${e.img}" alt="" width="452" height="402">`
+                    }
+                );
+            }
+        </script>
+
+         <div class="function4" id="function4" onclick="diwufenlei()">地物分类</div>
+        <script>
+            function diwufenlei(){
+                fetch("/diwufenlei", {
+  "body": null,
+  "method": "GET",
+  "credentials": "include"
+}).then((e)=>{return e.json()}).then(
+                    (e)=>{
+                        console.log(e)
+                        document.querySelector("#conclusion").innerHTML=`<img src="${e.img}" alt="" width="452" height="402">`
+                    }
+                );
+            }
+        </script>
+    </div>
+    <div class="buton-shangchuan">
+        <form id="image" action="/basketball_detection" enctype="multipart/form-data" method="post">
+            <input type="file" name="avatar" id="inputImage" accept="image/*" value="选择图片1" multiple >
+         <input type="file" name="avatar1" id="inputImage1" accept="image/*" value="选择图片2"  multiple >
+            <input type="submit" value="上传">
+            <div class="showimage">
+            <div id="previewContainer">
+                {% if first_pic %}
+                <img src="{{ first_pic }}" alt="" width="182" height="182">
+                {% endif %}
+            </div>
+            <div id="previewContainer1" style="width: 180px;
+    height: 180px;
+    margin-left: 23px;
+    border: 1px solid #333;
+    overflow: hidden;
+    position: absolute; left: 181px">
+                {% if scend_pic %}
+                <img src="{{ scend_pic }}" alt="" width="182" height="182">
+                {% endif %}
+            </div>
+            <div class="preview-item"></div>
+            </div>  
+        </form>    
+    </div>
+    <div class="conclusion" id="conclusion">
+
+    </div>
+ </div>
+</body>
+<script type="text/javascript">
+    function change() {
+        var inputImage = document.getElementById("inputImage");
+        var files = inputImage.files;
+        
+        var previewContainer = document.getElementById("previewContainer");
+        while(previewContainer.hasChildNodes()){ previewContainer.removeChild(previewContainer.firstChild); }
+        for (var i = 0; i < files.length; i++) {
+            var file = files[i];
+            var imageType = /^image\//;
+            
+            if (!imageType.test(file.type)) {
+              continue;
+            }
+    
+            var img = document.createElement("img");
+            img.classList.add("preview-item");
+            img.file = file;
+            previewContainer.appendChild(img); // previewContainer是用来预览图片的div
+    
+            var reader = new FileReader();
+            reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
+            reader.readAsDataURL(file);
+
+
+        }
+    }
+    </script>
+</html>
