@@ -1,0 +1,293 @@
+
+
+body{
+    background-image: url(../img/table1.jpg);
+    padding: 0 0;  
+    z-index: 1;
+}
+.container{
+    width: 100%;
+    margin: 0 0px;
+    padding: 0 0px;
+}
+.fixed{
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    z-index: 5;
+    background-color: rgba(1, 0, 0, .3);
+    overflow: hidden;
+}
+.icons_ai{
+    position:absolute;
+    z-index: 3;
+    left: 15px;
+    margin-top: 6.5px;
+    cursor: pointer;
+}
+
+.icons_admin{
+    z-index: 3;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    position: fixed;
+    right: 30px;
+    color: #fff;
+    border-radius: 50%;
+    background-color: #ccc;
+    top: 6.4px;
+}
+ .guanwang{
+    width: 100px;
+    position:absolute;
+    height: 50px;
+    margin-left: 63px;
+    margin-top: 14px;
+    font-size: 1.2em;
+    color:#e6e6e6;
+    display: inline-block;
+    font-family: PingfangSC-Light,NotoSansHans-Light,Microsoft Yahei,sans-serif;
+    text-shadow: 0 0.026042rem 0.052083rem #000;;
+    font-weight: 400;
+}
+ .guanwang p1{
+    display: inline-block; 
+}
+ .guanwang .En{
+    display: inline-block;
+    position: absolute;
+    font-size: 1.1em;
+    font-family: PingfangSC-Light,NotoSansHans-Light,Microsoft Yahei,sans-serif;
+    text-shadow: 0 0.026042rem 0.052083rem #000;;
+    font-weight: 400;
+}
+ .aistudio{
+    width: 260px;
+    position:absolute;
+    height: 50px;
+    margin-left: 1090px;
+    margin-top: 14px;
+    font-size: 1.2em;
+    color:#e6e6e6;
+    display: inline-block;
+    font-family: PingfangSC-Light,NotoSansHans-Light,Microsoft Yahei,sans-serif;
+    text-shadow: 0 0.026042rem 0.052083rem #000;;
+    font-weight: 400;
+}
+ .feijiang{
+    width: 250px;
+    position:absolute;
+    height: 50px;
+    margin-left: 1290px;
+    margin-top: 14px;
+    font-size: 1.2em;
+    color:#e6e6e6;
+    display: inline-block;
+    font-family: PingfangSC-Light,NotoSansHans-Light,Microsoft Yahei,sans-serif;
+    text-shadow: 0 0.026042rem 0.052083rem #000;;
+    font-weight: 400;
+}
+/* 标题 */
+.container header{
+    width: 300px;
+    background-color: 0000;
+    color: #e3e4e5;
+    text-align: center;
+    position: absolute;
+    border-radius: 7px;
+    margin: 200px 200px;
+    font-size: 40px;
+    font-style: initial;
+
+    z-index: 3;
+}
+/* 内容 */
+.container section{
+    top: 500px;
+    width: 85%;
+    margin: 0  auto;
+    z-index: 1;
+}
+.container .name{
+    width: 350px;
+    height: 60px;
+    color: rgb(26, 145, 235);
+    margin-bottom: 38px;
+    font-family: PingfangSC-Light,NotoSansHans-Light,Microsoft Yahei,sans-serif;
+    font-weight: 600;
+    font-size: 62px;
+    text-shadow: 0 0.026042rem 0.052083rem #000;
+}
+.container h1{
+    font-family: PingfangSC-Light,NotoSansHans-Light,Microsoft Yahei,sans-serif;
+    text-shadow: 0 0.026042rem 0.052083rem #000;;
+    font-weight: 400;
+    text-align: left;
+    width: 460px;
+}
+.container .tiyan{
+    margin-left: 6px;
+    width: 150px;
+    margin-top: 38px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 20px;
+    background-color: rgb(26, 145, 235);
+    color: #383838;
+    border-radius: 6px;
+    font-family: PingfangSC-Light,NotoSansHans-Light,Microsoft Yahei,sans-serif;
+    font-weight: 400;
+    text-shadow: 0 0.026042rem 0.052083rem #000;
+}
+.container .tiyan:hover{
+    background-color: rgb(0, 102, 135);
+    color: #d0cdcd;
+}
+
+.banner {
+    width: 100%;
+    height: 716px;
+    position: relative;
+}
+.banner .wrap {
+    width: 100%;
+}
+.banner .wrap .item {
+    width: 100%;
+}
+.item img {
+    width: 100%;
+    height: 716px;
+    vertical-align: top;
+    position: absolute;
+}
+.div-left {
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    transform: translatey(-50%);
+    cursor: pointer;
+    width: 71px;
+    height: 89px;
+    font-size: 80px;
+    line-height: 89px;
+    text-align: center;
+    color: #D6D8D4;
+    background-color: rgba(0, 0, 0, 0);
+}
+.div-right {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translatey(-50%);
+    cursor: pointer;
+    width: 60px;
+    height: 89px;
+    font-size: 80px;
+    line-height: 89px;
+    text-align: center;
+    color: #D6D8D4;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.div-left:hover{
+    color: #e3e4e5;
+    background-color: rgba(1, 0, 0, .3);
+}
+
+.div-right:hover{
+    background-color: rgba(1, 0, 0, .3); 
+}
+
+.pagenation {
+    position: absolute;
+    /* border: 1px solid red; */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    bottom: 40px;
+}
+
+.pagenation>div {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.pagenation>div:last-child {
+    margin-right: 0;
+}
+.introduction{
+    position: absolute;
+    margin-top: 50px;
+    width: 370px;
+    height: 100px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #ccc;
+    font-size: 30px;
+    box-sizing: content-box;
+    left: 580px;
+}
+.introduction p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.introduction-img{
+    width: 880px;
+    height: 420px;
+    margin-top: 250px;
+    margin-bottom: 300px;
+    margin-left: auto;
+    margin-right:auto ;
+    position: relative;
+}
+
+.introduction-img .img1{
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    top: 10px;
+    left: 20px;
+    border: .5px solid #383838;
+    box-shadow: 0 0.9rem 1.7rem rgba(0, 0, 0, 0.25);
+}
+
+.introduction-img .img2{
+    display: block;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    position: absolute;
+    border: .5px solid #383838;
+    box-shadow: 0 0.9rem 1.7rem rgba(0, 0, 0, 0.25);
+}
+.introduction-img .img1:hover{
+    transform:scale(1.03);
+}
+.introduction-img .img2:hover{
+    transform:scale(1.03);
+}
+
+.footer{
+    position: absolute;
+    width: 100%;
+    height: 84px;
+    background-color: #383838;
+    margin: auto;
+    display: block;
+}
+.footer .footer-content{
+    width: 300px;
+
+    margin: 20px auto;
+
+}
